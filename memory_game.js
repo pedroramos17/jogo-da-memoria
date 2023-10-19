@@ -12,11 +12,6 @@ $(document).ready(function(){
 	$("#start_again").bind("click", reload);
 	
 	$("#level_chooser").bind("change", levelChoosen);
-	
-	// Add some sounds
-	$(document).bind("flipping_cards.sound", playFlip);
-	$(document).bind("game_won.sound", playCheer);
-	$(document).bind("found_match", playMatch);
 });
 
 function levelChoosen(event){
@@ -146,25 +141,4 @@ function getFlashMovieObject(movieName){
 	} else {
 		return document.getElementById(movieName);
 	}
-};
-
-function playCheer(){
-	var sfxMovie=getFlashMovieObject("sfx_movie");
-	try{
-		sfxMovie.cheer();
-	} catch(e) {};
-};
-
-function playFlip(){
-	var sfxMovie=getFlashMovieObject("sfx_movie");
-	try{
-		sfxMovie.flip();
-	} catch(e) {};
-};
-
-function playMatch(){
-	var sfxMovie=getFlashMovieObject("sfx_movie");
-	try{
-		sfxMovie.match();
-	} catch(e) {};
 };
